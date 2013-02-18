@@ -18,16 +18,16 @@ h3 { font-size: 24px; font-weight: bold; }
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 30px;
-	background: #333;
+	background: #f24949;
 	border-radius: 5px;
-	border-top-left-radius: 0px;
+	/*border-top-left-radius: 0px;*/
 	height: 30px;
 	padding: 0px 7px;
 	display: block;
 }
 
-.button.red { background: #f24949; }
-.button.red:hover { background: #f57a7a; }
+.button:hover { background: #f57a7a; }
+
 .button.green { background: #57b34f; }
 .button.green:hover { background: #8ad184; }
 .button.blue { background: #499df2; }
