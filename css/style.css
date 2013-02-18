@@ -6,10 +6,6 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-h1 { font-size: 42px; font-weight: bold; }
-h2 { font-size: 32px; font-weight: bold; }
-h3 { font-size: 24px; font-weight: bold; }
-
 .left { float: left; }
 .right { float: right; }
 
@@ -50,7 +46,6 @@ h3 { font-size: 24px; font-weight: bold; }
 	width: 900px;
 	height: 70px;
 	padding: 10px 0px;
-	margin-bottom: 10px;
 }
 
 #header .left > * {
@@ -63,3 +58,41 @@ h3 { font-size: 24px; font-weight: bold; }
 	margin: 20px 0px 20px 10px;
 	float: right;
 }
+
+#content { font-size: 16px; line-height: 28px; }
+#content > * { margin-top: 15px; }
+
+#content h1,
+#content h2,
+#content h3 {
+	font-weight: bold;
+	line-height: normal !important; 
+}
+
+#content h1 { font-size: 42px; }
+#content h2 { font-size: 32px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+#content h3 { font-size: 24px;  }
+
+#content em { font-style: italic; }
+#content strong { font-weight: bold; }
+
+#content code { font-family: monospace; background: #eee; border: 1px solid #ccc; border-radius: 3px; padding: 4px; }
+#content pre code { line-height: 24px; padding: 10px; display: block; }
+
+#content ul { list-style-type: disc; }
+#content ol { list-style-type: decimal; }
+#content li { margin-left: 25px; }
+
+#content blockquote { border: 1px dashed #ccc; padding: 10px; }
+#content blockquote p:before,
+#content blockquote p:after {
+	content:" \"";
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 32px;
+}
+
+#content blockquote p:before { content: "\" " !important; }
+
+#content a { color: #499df2; text-decoration: underline; }
+#content hr { border: none; border-bottom: 1px solid #ddd; margin: 20px 0px; }
