@@ -1,10 +1,23 @@
-(function(markdown) {
-	
-	md(markdown, "#content", "#md-index");
+$(function() {
 
-})(Markdown.getSanitizingConverter());
+	var markdown = new Markdown.Converter();
 
-function md(markdown, target, source) {
-	var result = markdown.makeHtml($(source).html());
-	$(target).html($(target).html() + result);
-}
+	$(window).bind('hashchange', function() {
+		var hash = location.hash.replace(/^#|^\/|\/$/g, '');
+		var file = (hash || 'home') + '.md';
+
+		var result = Pages.factory.get(file) || Pages.factory.get('error/404.md');
+		if (result) {
+			result = markdown.makeHtml(result);
+		}
+
+		$('#content').html(result || 'There is no 404 present.');
+	});
+
+	if (location.hash == "") {
+		location.hash = "#/";
+	}
+
+	$(window).trigger('hashchange');
+
+});
