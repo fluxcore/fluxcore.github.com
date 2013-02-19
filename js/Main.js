@@ -2,21 +2,28 @@ $(function() {
 
 	var markdown = new Markdown.Converter();
 
-	$(window).bind('hashchange', function() {
-		var hash = location.hash.replace(/^#|^\/|\/$/g, '');
-		var file = (hash || 'home') + '.md';
+	if (location.hash == "") {
+		location.hash = "#/";
+	}
 
-		var result = Pages.factory.get(file) || Pages.factory.get('error/404.md');
+	$(window).bind('hashchange', function() {
+		var hash = location.hash.replace(/^#/, '');
+		hash = hash.replace(/^\/|\/$/g, '') || 'home';
+
+		var title = 'FluxCore';
+		var split = hash.split('/');
+		$.each(split, function(k, v) {
+			title = title + ' - ' + v.charAt(0).toUpperCase() + v.slice(1);
+		});
+
+		document.title = title;
+		var result = Pages.factory.get(hash + '.md') || Pages.factory.get('error/404.md');
 		if (result) {
 			result = markdown.makeHtml(result);
 		}
 
 		$('#content').html(result || 'There is no 404 present.');
 	});
-
-	if (location.hash == "") {
-		location.hash = "#/";
-	}
 
 	$(window).trigger('hashchange');
 

@@ -69,7 +69,8 @@ body {
 #download a { position: absolute; top: 135px; right: 120px; }
 
 #content { font-size: 16px; line-height: 28px; }
-#content > * { margin-top: 15px; }
+#content > *,
+#content noscript > * { margin-top: 15px; }
 
 #content h1,
 #content h2,
@@ -107,10 +108,10 @@ body {
 #content hr { border: none; border-bottom: 1px solid #ddd; margin: 20px 0px; }
 
 #footer {
-	line-height: 30px;
+	line-height: 50px;
+	background: #fff;
 	border-top: 1px dashed #ccc;
 	width: 900px;
-	height: 30px;
-	padding: 10px 0px;
+	height: 50px;
 	margin-top: 20px;
 }
