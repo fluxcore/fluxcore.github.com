@@ -11,8 +11,6 @@ $(function() {
 		footer.positionBottom();
 	} $(window).scroll(positionFooter).resize(positionFooter);
 
-	positionFooter();
-
 	if (location.hash == "") {
 		location.hash = "#/";
 	}
@@ -40,5 +38,7 @@ $(function() {
 	});
 
 	$(window).trigger('hashchange');
+
+	positionFooter();
 
 });
