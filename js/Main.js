@@ -17,6 +17,9 @@ $(function() {
 		location.hash = "#/";
 	}
 
+	$('#header').html(Pages.factory.get('template/header.html'));
+	$('#footer').html(Pages.factory.get('template/footer.html'));
+
 	$(window).bind('hashchange', function() {
 		var hash = location.hash.replace(/^#/, '');
 		hash = hash.replace(/^\/|\/$/g, '') || 'home';

@@ -113,5 +113,8 @@ body {
 	border-top: 1px dashed #ccc;
 	width: 900px;
 	height: 50px;
+	padding: 10px 0px;
 	margin-top: 20px;
 }
+
+#footer .right li { margin: 10px 0px 10px 10px; float: right; }
