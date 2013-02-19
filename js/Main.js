@@ -1,6 +1,17 @@
 $(function() {
 
 	var markdown = new Markdown.Converter();
+	var footer = new StickyFooter.StickyObject({
+		main: $('#footer'),
+		header: $('#header'),
+		content: $('#content')
+	});
+
+	function positionFooter() {
+		footer.positionBottom();
+	} $(window).scroll(positionFooter).resize(positionFooter);
+
+	positionFooter();
 
 	if (location.hash == "") {
 		location.hash = "#/";

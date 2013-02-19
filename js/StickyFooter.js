@@ -1,66 +1,109 @@
-$(window).bind("load", function() { 
-	var footerH, headerH, contentH = false; 
-	var contentMP = false; 
-  var $footer = $("#footer");
-  var $header = $("#header");
-  var $content = $("#content");
-  positionFooter();
-  function positionFooter() {
-  	if (!contentMP) {
-	  	footerH = parseInt($footer.css('marginTop').replace('px', ''));
-	  	footerH = footerH + parseInt($footer.css('marginBottom').replace('px', ''));
-	  	footerH = footerH + parseInt($footer.css('paddingTop').replace('px', ''));
-	  	footerH = footerH + parseInt($footer.css('paddingBottom').replace('px', ''));
-	    footerH = footerH + $footer.height();
-	    console.log(footerH);
+StickyFooter = {};
 
-	  	headerH = parseInt($header.css('marginTop').replace('px', ''));
-	  	headerH = headerH + parseInt($header.css('marginBottom').replace('px', ''));
-	  	headerH = headerH + parseInt($header.css('paddingTop').replace('px', ''));
-	  	headerH = headerH + parseInt($header.css('paddingBottom').replace('px', ''));
-	    headerH = headerH + $header.height();
-	    console.log(headerH);
+(function(exports, $) {
 
-	    contentMP = 0;
-  		contentMP = contentMP + parseInt($content.css('marginTop').replace('px', ''));
-  		contentMP = contentMP + parseInt($content.css('marginBottom').replace('px', ''));
-  		contentMP = contentMP + parseInt($content.css('paddingTop').replace('px', ''));
-  		contentMP = contentMP + parseInt($content.css('paddingBottom').replace('px', ''));
+	// Extend jQuery so we can do $('element').exists().
+	$.fn.exists = function () {
+		return this.length !== 0;
 	}
 
-    contentH = contentMP + $content.height();
-    console.log(contentH);
+	exports.StickyObject = StickyObject;
+	exports.ElementDynamicSize = ElementDynamicSize;
 
-    var footerT = ($(window).scrollTop()+$(window).height()-footerH-1)+"px";
-    //headerH = $header.height();
-    //contentH = $content.height();
+	function StickyObject(elements) {
+		this.elements = elements || {};
+		this.sizes = {};
+		if (typeof elements.main == 'undefined') {
+			throw "No main object is defined!";
+		}
+	}
 
-    // DEBUGGING STUFF
+	StickyObject.prototype.positionBottom = function(offset) {
+		var height = this.getHeight() + this.getHeightOfElement(this.elements.main, false, true);
+		if (height < $(window).height()) {
+			var top = (
+				$(window).scrollTop() +
+				$(window).height() -
+				this.getHeightOfElement(this.elements.main) -
+				1
+			) + 'px';
 
-    /*console.log("Document height: ", $(document.body).height());
-    console.log("Window height: ", $(window).height());
-    console.log("Window scroll: ", $(window).scrollTop());
-    console.log("Footer height: ", footerH);
-    console.log("Footer top: ", footerTop);
-    console.log("-----------")
-    console.log("Header height: ", header1);
-    console.log("Content height: ", content1);
-    console.log("-----------")*/
+			this.elements.main.css({
+				position: 'absolute',
+				top: top
+			});
+		} else {
+			this.elements.main.css({
+				position: 'static'
+			});
+		}
+	};
 
-    console.log((headerH+contentH+footerH));
-    console.log($(window).height());
-    if ( (headerH+contentH+footerH+20) < $(window).height()) {
-      $footer.css({
-        position: "absolute",
-        top: footerT
-      }).stop();
-    } else {
-      $footer.css({
-        position: "static"
-      });
-    }
-  }
-  $(window)
-  .scroll(positionFooter)
-  .resize(positionFooter)   
-});
+	StickyObject.prototype.getHeight = function() {
+		var that = this;
+		var result = this.getHeightOfElement(this.elements.main, true);
+		$.each(this.elements, function(k, v) {
+			if (k == 'main') {
+				return;
+			}
+
+			result = result + that.getHeightOfElement(v);
+		});
+
+		return result;
+	};
+
+	StickyObject.prototype.getHeightOfElement = function($element, nodyn, noheight) {
+		nodyn = nodyn || false;
+		noheight = noheight || false;
+
+		var index = $element.id + $element.class;
+		if (!this.sizes[index]) {
+			this.sizes[index] = new ElementDynamicSize($element);
+		}
+
+		return ((nodyn) ? 0 : this.sizes[index].height()) + ((noheight) ? 0 : $element.height());
+	};
+
+	function ElementDynamicSize($element) {
+		if (!$element.exists()) {
+			throw "ElementDynamicSize: Element does not exist!";
+		}
+
+		this.$element = $element;
+		this.buffer = {};
+	}
+
+	ElementDynamicSize.prototype.width = function() {
+		if (typeof this.buffer.width == 'undefined') {
+			var $e = this.$element;
+
+			var eW = 0;
+			eW = eW + parseInt($e.css('marginLeft').replace('px', ''));
+			eW = eW + parseInt($e.css('marginRight').replace('px', ''));
+			eW = eW + parseInt($e.css('paddingLeft').replace('px', ''));
+			eW = eW + parseInt($e.css('paddingRight').replace('px', ''));
+
+			this.buffer.width = eW;
+		}
+
+		return this.buffer.width;
+	};
+
+	ElementDynamicSize.prototype.height = function() {
+		if (typeof this.buffer.height == 'undefined') {
+			var $e = this.$element;
+
+			var eH = 0;
+			eH = eH + parseInt($e.css('marginTop').replace('px', ''));
+			eH = eH + parseInt($e.css('marginBottom').replace('px', ''));
+			eH = eH + parseInt($e.css('paddingTop').replace('px', ''));
+			eH = eH + parseInt($e.css('paddingBottom').replace('px', ''));
+
+			this.buffer.height = eH;
+		}
+
+		return this.buffer.height;
+	};
+
+})(StickyFooter, jQuery);
