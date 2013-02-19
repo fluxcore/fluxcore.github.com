@@ -19,7 +19,7 @@ StickyFooter = {};
 	}
 
 	StickyObject.prototype.positionBottom = function(offset) {
-		var height = this.getHeight() + this.getHeightOfElement(this.elements.main, false, true);
+		var height = this.getHeight();
 		if (height < $(window).height()) {
 			var top = (
 				$(window).scrollTop() +
