@@ -2,6 +2,7 @@ body {
 	color: #333;
 	font-family: sans-serif;
 	font-size: 14px;
+	overflow-y: scroll;
 }
 
 .left { float: left; }
@@ -58,15 +59,16 @@ body {
 	float: right;
 }
 
-#download {
-	background: transparent url('../img/download.png');
+.huge {
 	width: 900px;
 	height: 300px;
 	margin-top: 15px;
 	position: relative;
 }
 
-#download a { position: absolute; top: 135px; right: 120px; }
+.huge a { position: absolute; top: 135px; right: 120px; }
+.huge.about { background: transparent url('../img/about.png'); }
+.huge.download { background: transparent url('../img/download.png'); }
 
 #content { font-size: 16px; line-height: 28px; }
 #content > *,
@@ -88,6 +90,7 @@ body {
 
 #content code { font-family: monospace; background: #eee; border: 1px solid #ccc; border-radius: 3px; padding: 4px; margin: 0px 4px; }
 #content pre code { line-height: 24px; padding: 10px; margin: 0px; display: block; }
+#content .button { display: inline-block; margin: 0px 4px; }
 
 #content ul { list-style-type: disc; }
 #content ol { list-style-type: decimal; }

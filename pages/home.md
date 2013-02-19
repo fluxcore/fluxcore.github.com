@@ -1,5 +1,5 @@
-<div id="download">
-	<a class="button" href="#">Click here to download!</a>
+<div class="huge about">
+	<a class="button" href="#/download">Click here to download!</a>
 </div>
 
 What is FluxCore?

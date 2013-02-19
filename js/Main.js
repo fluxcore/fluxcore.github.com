@@ -35,10 +35,10 @@ $(function() {
 		}
 
 		$('#content').html(result || 'There is no 404 present.');
+
+		positionFooter();
 	});
 
 	$(window).trigger('hashchange');
-
-	positionFooter();
 
 });
