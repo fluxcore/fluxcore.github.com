@@ -89,14 +89,14 @@ body {
 #content em { font-style: italic; }
 #content strong { font-weight: bold; }
 
-#content > code,
+#content code,
 #content pre {
 	font-family: monospace;
 	font-size: 12px;
 	border-radius: 3px;
 }
 
-#content > code {
+#content code {
 	background: #eee;
 	border: 1px solid #ccc;
 	padding: 4px;
@@ -109,6 +109,8 @@ body {
 	margin: 0px;
 	display: block;
 }
+
+#content pre code { background: inherit; border: inherit; padding: 0; margin: 0; }
 
 #content .button { display: inline-block; margin: 0px 4px; }
 
