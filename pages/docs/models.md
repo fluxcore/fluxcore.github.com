@@ -1,12 +1,12 @@
 Models
 =
 
-Backend
+Implementation
 -
 
 By default, the framework implements `illuminate/database` as database
 backend and uses the `Eloquent ORM` to provide a Model interface.
-You can read the documentation of Eloquent at the [Laravel 4 website](http://four.laravel.com/docs/eloquent).
+You can read the documentation of Eloquent at the [Eloquent ORM documentation page](http://four.laravel.com/docs/eloquent).
 
 Defining a Model
 -

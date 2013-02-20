@@ -4,7 +4,8 @@ Index
 -
 
  * [Configuration](#/docs/configuration)
- * [Routing](#/docs/configuration)
+ * [Routing](#/docs/routing)
+ * [IoC Binding](#/docs/binding)
  * [Controllers](#/docs/controllers)
  * [Models](#/docs/models)
  * [Views](#/docs/views)
@@ -12,4 +13,4 @@ Index
 Further Reading
 -
 
-PHPDoc generated documentation of all components can be found [here](#).
+PHPDoc generated documentation of `fluxcore/components` can be found [here](#).
