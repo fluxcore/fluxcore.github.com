@@ -60,5 +60,5 @@ of a route handler is rendered as a string.
 This means that you can augment any class that is returned by a route
 with `__toString` to specify in which manner it should be rendered.
 
-_You can look at `app/resolve.php` to get more insight on how output
-and errors are handled._
+You can look at `app/resolve.php` to get more insight on how output
+and errors are handled.

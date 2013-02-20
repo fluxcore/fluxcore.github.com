@@ -3,13 +3,15 @@
 Download
 -
 
-<a class="button" href="https://github.com/fluxcore/framework/archive/master.zip">fluxcore/framework master</a>
+<a class="button" href="https://github.com/fluxcore/framework/archive/master.zip">
+	fluxcore/framework master
+</a>
 
 Installation
 -
 
- 1. Download **FluxCore** as by clicking the
-    <span class="button">fluxcore/framework master</span> button.
+ 1. Download **FluxCore** by clicking the
+    <span class="button">fluxcore/framework master</span> button above.
  2. Extract the downloaded archive into your website directory.
  3. Run `composer install` from your command-line.
 
