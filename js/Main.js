@@ -36,7 +36,13 @@ $(function() {
 
 		$('#content').html(result || 'There is no 404 present.');
 
+		// Position footer.
 		positionFooter();
+
+		// PrettyPrint
+		$('#content pre').addClass('prettyprint');
+		prettyPrint();
+
 	});
 
 	$(window).trigger('hashchange');
