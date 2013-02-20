@@ -69,6 +69,7 @@ body {
 .huge a { position: absolute; top: 135px; right: 120px; }
 .huge.about { background: transparent url('../img/about.png'); }
 .huge.download { background: transparent url('../img/download.png'); }
+.huge.learn { background: transparent url('../img/learn.png'); }
 
 #content { font-size: 16px; line-height: 28px; }
 #content > *,
