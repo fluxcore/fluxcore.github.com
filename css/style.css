@@ -106,11 +106,11 @@ body {
 #content pre {
 	line-height: 20px;
 	padding: 10px 15px;
-	margin: 0px;
+	margin: 10px 0px 0px;
 	display: block;
 }
 
-#content pre code { background: inherit; border: inherit; padding: 0; margin: 0; }
+#content pre code { background: inherit; border: inherit; padding: 0; margin: 0px; }
 
 #content .button { display: inline-block; margin: 0px 4px; }
 
