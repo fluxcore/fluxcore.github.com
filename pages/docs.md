@@ -12,6 +12,4 @@ Index
 Further Reading
 -
 
-PHPDoc generated documentation of all components can be found here:
-
- * [fluxcore/components](#)
+PHPDoc generated documentation of all components can be found [here](#).
