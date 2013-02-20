@@ -49,8 +49,8 @@ specified input parameters **in order**.
 The input types that are provided by default are:
 
  * **:int** - _Integer (0-9)_
- * **:string** - _String (a-zA-Z)_
- * **:alpha** - _Alphanumeric (a-zA-Z0-9)_
+ * **:string** - _String (a-z, A-Z)_
+ * **:alpha** - _Alphanumeric (a-z, A-Z, 0-9)_
 
 ### Output
 
