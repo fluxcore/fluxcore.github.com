@@ -11,14 +11,24 @@ $(function() {
 		footer.positionBottom();
 	} $(window).scroll(positionFooter).resize(positionFooter);
 
-	if (location.hash == "") {
-		location.hash = "#/";
+	function updateLinks() {
+		var links = document.links;
+
+		for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+			if (links[i].hostname != window.location.hostname) {
+				links[i].target = '_blank';
+			}
+		}
 	}
 
 	$('#header').html(Pages.factory.get('template/header.html'));
 	$('#footer').html(Pages.factory.get('template/footer.html'));
 
 	$(window).bind('hashchange', function() {
+		if (location.hash == "" || location.hash == "#") {
+			location.hash = "#/";
+		}
+
 		var hash = location.hash.replace(/^#/, '');
 		hash = hash.replace(/^\/|\/$/g, '') || 'home';
 
@@ -42,6 +52,9 @@ $(function() {
 		// PrettyPrint
 		$('#content pre').addClass('prettyprint');
 		prettyPrint();
+
+		// Update links.
+		updateLinks();
 
 	});
 
