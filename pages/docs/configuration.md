@@ -9,8 +9,6 @@ implement a configuration interface.
 
 Configuration files are created in `app/config/` and are accessed through `Config::get(...)`.
 
-_See **usage** for more information on configuration access._
-
 Usage
 -
 
