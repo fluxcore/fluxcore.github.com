@@ -13,4 +13,5 @@ Index
 Further Reading
 -
 
-PHPDoc generated documentation of `fluxcore/components` can be found [here](#).
+PHPDoc generated documentation of `fluxcore/components` can be
+found <a href="/docs/components/" target="_blank">here</a>.
