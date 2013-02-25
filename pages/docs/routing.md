@@ -51,14 +51,3 @@ The input types that are provided by default are:
  * **:int** - _Integer (0-9)_
  * **:string** - _String (a-z, A-Z)_
  * **:alpha** - _Alphanumeric (a-z, A-Z, 0-9)_
-
-### Output
-
-Output is by default handled in `app/resolve.php` where the result
-of a route handler is rendered as a string.
-
-This means that you can augment any class that is returned by a route
-with `__toString` to specify in which manner it should be rendered.
-
-You can look at `app/resolve.php` to get more insight on how output
-and errors are handled.

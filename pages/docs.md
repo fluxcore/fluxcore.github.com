@@ -3,6 +3,12 @@
 Index
 -
 
+### Guides
+
+ * [Getting Started](#/docs/guide/getting-started) - _Getting started with **FluxCore**._
+
+### Components
+
  * [Application](#/docs/application) - _IoC container & Bindings._
  * [Configuration](#/docs/configuration) - _Configuration handling._
  * [Controllers](#/docs/controllers) - _Implementing controllers._

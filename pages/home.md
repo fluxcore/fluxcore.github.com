@@ -3,32 +3,22 @@
 </div>
 
 What is FluxCore?
------------------
+-
 
-FluxCore is an application framework for PHP made for those that are
+**FluxCore** is an application framework for PHP made for those that are
 looking for a framework but without all the extra "fuss".
 
 It is meant to be used as an absolute base for you to implement
 features as you see fit and everything on the application end is easily
 accessible for modifications.
 
-What is included with FluxCore?
--------------------------------
+It can also be thought of as a more lightweight alternative to **Laravel 4**
+as **FluxCore** has full Illuminate compatibility.  
+What differentiates **FluxCore** from **Laravel 4** however is that all components
+are completely decoupled from the framework giving you complete control of all aspects
+of the framework.
 
-The components implement the following packages by default:
+Where do I start?
+-
 
- * illuminate/support
-   * Used laravel ServiceProvider support.
- * illuminate/container
-   * Used as IoC container extended by the Application class.
- * symfony/http-foundation
-   * Base HTTP foundation classes used for it's Request class among others.
-
-The application implements the following packages by default:
-
- * fluxcore/components
-   * The core components of FluxCore.
- * illuminate/view
-   * Used to present data to the end-user primarily because of it's blade engine.
- * illuminate/database
-   * Used to communicate with the database via the Eloquent class.
+Getting started with **FluxCore** is really simple, you can read more about it [here](#/docs/getting-start).

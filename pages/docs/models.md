@@ -5,15 +5,15 @@ Implementation
 -
 
 By default, the framework implements `illuminate/database` as database
-backend and uses the `Eloquent ORM` to provide a Model interface.
+backend and uses the `Eloquent ORM` to provide a Model interface.  
 You can read the documentation of Eloquent at the [Eloquent ORM documentation page](http://four.laravel.com/docs/eloquent).
 
 Usage
 -
 
-To create a Model, you need to create a new file in the `app/model/` directory
-of the framework, define the model and finally run `composer update` to
-update the autoload classmap.
+To create a Model, you need to define the model in `app/model/`.  
+This path is added to the ClassLoader so everything in there will loaded according
+to the PSR-0 standard.
 
 When defining a model, make sure it inherits from the Model class as by
 default it is an alias to the `Eloquent` model base class.
@@ -29,9 +29,7 @@ default it is an alias to the `Eloquent` model base class.
 
  1. We have created the file `app/model/User.php` and put the above code
     inside it.
- 2. We run `composer update` from the command line inside the root directory
-    of the framework to update the classmap. (_This is only required when a new file is created._)
- 3. The model is now ready to use, see the example below.
+ 2. The model is now ready to use, see the example below.
 
 *Example*
 

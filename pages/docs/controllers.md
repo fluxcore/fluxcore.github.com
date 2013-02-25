@@ -13,6 +13,6 @@ in the route handler.
 Because there is no base controller, the implementation of controllers
 is entirely up to you.  
 There is however a "base" for you to implement controllers on though,
-the directory `app/controller/` is added to the classmap and you can
-create any controller related classes in this directory and then run
-a simple `composer update` to update its classes.
+the directory `app/controller/` is added to the **ClassLoader** so all you
+have to do is define your controller-related classes in there according
+to the PSR-0 standard and the rest will be cake.

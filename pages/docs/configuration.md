@@ -36,6 +36,8 @@ _Note: If you have your configuration nested in a folder you can access it as fo
 We can access the data we defined in the Configuration file as follows:
 
 	// Config::get($abstract, $default = null);
+	Config::get('dir.example', 'default'); // array(key1 => ..., key2 => ...)
+	Config::get('dir.example2', 'default'); // default
 	Config::get('dir.example.key1', 'default'); // val1
 	Config::get('dir.example.key2', 'default'); // val2
 	Config::get('dir.example.key3', 'default'); // default
@@ -45,9 +47,12 @@ return whatever is passed as $default.
 
 ### ArrayAccess
 
-`Configuration` implements the ArrayAccess interface which means that you can interface with it
-like an array.
+`Configuration` implements the ArrayAccess interface which means that you can fetch from it
+like an array.  
+_Modification of variables is not permitted on Configuration files however._
 
+	$app['config']['dir.example'] // array(key1 => ..., key2 => ...)
+	$app['config']['dir.example2'] // null
 	$app['config']['dir.example.key1']; // val1
 	$app['config']['dir.example.key2']; // val2
 	$app['config']['dir.example.key3']; // null
