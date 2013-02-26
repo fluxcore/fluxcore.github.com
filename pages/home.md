@@ -21,4 +21,4 @@ of the framework.
 Where do I start?
 -
 
-Getting started with **FluxCore** is really simple, you can read more about it [here](#/docs/getting-start).
+Getting started with **FluxCore** is really simple, you can read more about it [here](#/docs/getting-started).
