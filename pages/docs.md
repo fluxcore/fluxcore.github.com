@@ -6,6 +6,7 @@ Index
 ### Guides
 
  * [Getting Started](#/docs/guide/getting-started) - _Getting started with **FluxCore**._
+ * [Service Providers](#/docs/guide/service-providers) - _Getting started using service providers **FluxCore**._
 
 ### Components
 
@@ -19,5 +20,7 @@ Index
 Further Reading
 -
 
-PHPDoc generated documentation of `fluxcore/components` can be
-found <a href="/docs/components/" target="_blank">here</a>.
+You can read about the philosophy around **FluxCore** on the
+<a class="button" href="#/">home</a> page.
+
+You can find doxygen generated documentation of `fluxcore/components` <a href="/docs/components/" target="_blank">here</a>.
