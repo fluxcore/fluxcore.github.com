@@ -7,18 +7,8 @@ Download
 	fluxcore/framework master
 </a>
 
-Installation
--
+_You can download **FluxCore** by clicking the button below._
 
- 1. Download **FluxCore** by clicking the
-    <span class="button">fluxcore/framework master</span> button above.
- 2. Extract the downloaded archive into your website directory.
- 3. Run `composer install` from your command-line.
-
-Further Reading
--
-
-Now that you have an installation of **FluxCore** ready, you can start out by
-running the included little test-application on your web-server.
-
-You can read further about the Framework on the <a href="#/docs" class="button">Docs</a> page.
+If you need help getting started with using **FluxCore** we recommend that you read
+through our [Getting Started guide](#/docs/guide/getting-started) and if you want more
+information on using **FluxCore** you can review the [Documentation page](#/docs).
