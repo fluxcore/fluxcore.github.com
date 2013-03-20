@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>FluxCore Components: C:/GitHub/fluxcore/components/src/FluxCore/Core/Service/ServiceManager.php Source File</title>
+<title>FluxCore Components: C:/GitHub/fluxcore/components/src/FluxCore/Core/ServiceManager.php Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,72 +106,59 @@ $(document).ready(function(){initNavTree('_service_manager_8php_source.html','')
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>FluxCore\Core\Service;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>FluxCore\Core;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;use <a class="code" href="class_flux_core_1_1_core_1_1_application.html">FluxCore\Core\Application</a>;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;use Illuminate\Support\ServiceProvider as IlluminateProvider;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_1_1_service_manager.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_flux_core_1_1_core_1_1_service_1_1_service_manager.html">ServiceManager</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">protected</span> $app;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">protected</span> $services = array();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">function</span> __construct(<a class="code" href="class_flux_core_1_1_core_1_1_application.html">Application</a> $app = null)</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        $this-&gt;app = $app;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> has($class)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> isset($this-&gt;services[$class]);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> add($class)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span>($this-&gt;has($class)) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span>(!class_exists($class)) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">throw</span> new \RuntimeException(<span class="stringliteral">&quot;&#39;$class&#39; does not exist.&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        $service =&amp; $this-&gt;services[$class];</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        $service = <span class="keyword">new</span> $class($this-&gt;app);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span>( !($service instanceof <a class="code" href="class_flux_core_1_1_core_1_1_service_1_1_service_provider.html">ServiceProvider</a>) &amp;&amp;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            !($service instanceof IlluminateProvider)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">throw</span> new \RuntimeException(</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="stringliteral">&quot;&#39;$class&#39; is not a valid service provider.&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        $service-&gt;register();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">remove</span>($class)</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;use Illuminate\Support\ServiceProvider;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html">ServiceManager</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">protected</span> $booted = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">protected</span> $serviceProviders = array();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#aa3a3036aed0326a2290ce3f1fb2e7ecd">   31</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">register</span>(<a class="code" href="class_flux_core_1_1_core_1_1_service_provider.html">ServiceProvider</a> $provider)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Register service provider.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        $provider-&gt;register();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// Store service provider.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        $this-&gt;serviceProviders[get_class($provider)] = $provider;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#aa000f6b43ea0efc9b48e9253a4dcd851">   46</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#aa000f6b43ea0efc9b48e9253a4dcd851">isRegistered</a>($class)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span>(!$this-&gt;has($class)) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        unset($this-&gt;services[$class]);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> boot()</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">foreach</span>($this-&gt;services as $service) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            $service-&gt;boot();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> isset($this-&gt;serviceProviders[$class]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#a8814ea4b5beba763c570b4818980814e">   54</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#a8814ea4b5beba763c570b4818980814e">boot</a>()</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// Do not boot if the ServiceManager has booted</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// the providers before.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> ($this-&gt;booted) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// Boot each service provider.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">foreach</span> ($this-&gt;serviceProviders as $provider) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            $provider-&gt;boot();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment">// We have now booted the providers.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        $this-&gt;booted = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#a6851bfbb7de68e1b0ff64c1765d30c80">   76</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_core_1_1_service_manager.html#a6851bfbb7de68e1b0ff64c1765d30c80">hasBooted</a>()</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> $this-&gt;booted;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a class="el" href="dir_2ef617bc4dbcdc00f8daaea93dadc86f.html">src</a></li><li class="navelem"><a class="el" href="dir_21cd6ac02ff316c46b49e7ef95526e2b.html">FluxCore</a></li><li class="navelem"><a class="el" href="dir_4168f8a2b97b2151603dbfff8540a0f9.html">Core</a></li><li class="navelem"><a class="el" href="dir_ed6a6354eb4ee3fa188dac7048708c7f.html">Service</a></li><li class="navelem"><b>ServiceManager.php</b></li>
-    <li class="footer">Generated on Thu Feb 21 2013 13:28:17 for FluxCore Components by
+    <li class="navelem"><a class="el" href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a class="el" href="dir_2ef617bc4dbcdc00f8daaea93dadc86f.html">src</a></li><li class="navelem"><a class="el" href="dir_21cd6ac02ff316c46b49e7ef95526e2b.html">FluxCore</a></li><li class="navelem"><a class="el" href="dir_4168f8a2b97b2151603dbfff8540a0f9.html">Core</a></li><li class="navelem"><b>ServiceManager.php</b></li>
+    <li class="footer">Generated on Wed Mar 20 2013 10:03:57 for FluxCore Components by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

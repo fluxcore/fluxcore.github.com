@@ -114,47 +114,48 @@ $(document).ready(function(){initNavTree('_router_8php_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;use <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">FluxCore\Routing\Route\RouteResolver</a>;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;use Symfony\Component\HttpFoundation\Request;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_routing_1_1_router.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_flux_core_1_1_routing_1_1_router.html">Router</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">protected</span> $routes;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">protected</span> $resolver;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">function</span> __construct(<a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a> $routes, <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">RouteResolver</a> $resolver)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        $this-&gt;routes = $routes;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        $this-&gt;resolver = $resolver;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">function</span> __call($method, $args)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        $pattern = array_shift($args);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        $handler = array_shift($args);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> method_proxy($this, <span class="stringliteral">&#39;add&#39;</span>, array($pattern, $method, $handler));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_routing_1_1_router.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_flux_core_1_1_routing_1_1_router.html">Router</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">protected</span> $routes;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">protected</span> $resolver;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> add($pattern, $method, \Closure $handler)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        $this-&gt;routes-&gt;add(<span class="keyword">new</span> <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route.html">Route</a>($pattern, $method, $handler));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> resolve($path, Request $request)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        $id = <span class="keyword">new</span> <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_identifier.html">RouteIdentifier</a>(</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            $path,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            $request-&gt;getMethod()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> $this-&gt;resolver-&gt;resolve($id)-&gt;dispatch();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_routing_1_1_router.html#a6c677184126665afb910926cced05aa0">   36</a></span>&#160;    <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_routing_1_1_router.html#a6c677184126665afb910926cced05aa0">__construct</a>(<a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a> $routes, <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">RouteResolver</a> $resolver)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        $this-&gt;routes = $routes;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        $this-&gt;resolver = $resolver;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_routing_1_1_router.html#a9f1179240d068c94a040021326032bed">   50</a></span>&#160;    <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_routing_1_1_router.html#a9f1179240d068c94a040021326032bed">__call</a>($method, $args)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        $pattern = array_shift($args);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        $handler = array_shift($args);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        method_proxy($this, <span class="stringliteral">&#39;add&#39;</span>, array($pattern, $method, $handler));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_routing_1_1_router.html#a4397f8f692e37d3cb63682dbf920e1bf">   65</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_routing_1_1_router.html#a4397f8f692e37d3cb63682dbf920e1bf">add</a>($pattern, $method, \Closure $handler)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        $this-&gt;routes-&gt;add(<span class="keyword">new</span> <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route.html">Route</a>($pattern, $method, $handler));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_routing_1_1_router.html#afe4051902cb323b6617d931718a3c2fe">   77</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> <a class="code" href="class_flux_core_1_1_routing_1_1_router.html#afe4051902cb323b6617d931718a3c2fe">dispatch</a>($path, Request $request)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        $id = <span class="keyword">new</span> <a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_identifier.html">RouteIdentifier</a>(</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            $path,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            $request-&gt;getMethod()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> $this-&gt;resolver-&gt;resolve($id)-&gt;<a class="code" href="class_flux_core_1_1_routing_1_1_route_1_1_route_identifier.html#ac9b4976d41cd6b50add18c46b165c03d">dispatch</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a class="el" href="dir_2ef617bc4dbcdc00f8daaea93dadc86f.html">src</a></li><li class="navelem"><a class="el" href="dir_21cd6ac02ff316c46b49e7ef95526e2b.html">FluxCore</a></li><li class="navelem"><a class="el" href="dir_2f0823e94b4cf7a340b49cd2f851e428.html">Routing</a></li><li class="navelem"><b>Router.php</b></li>
-    <li class="footer">Generated on Thu Feb 21 2013 13:28:17 for FluxCore Components by
+    <li class="footer">Generated on Wed Mar 20 2013 10:03:57 for FluxCore Components by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

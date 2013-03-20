@@ -7,7 +7,6 @@ var class_flux_core_1_1_config_1_1_configuration =
     [ "offsetGet", "class_flux_core_1_1_config_1_1_configuration.html#a59aee6e89465b48f014699f41b521f87", null ],
     [ "offsetSet", "class_flux_core_1_1_config_1_1_configuration.html#ac6bde6b1eb50eb5377e91771fe46b7a3", null ],
     [ "offsetUnset", "class_flux_core_1_1_config_1_1_configuration.html#a2411227ea7118b13495de9839fd4b563", null ],
-    [ "throwNoModifications", "class_flux_core_1_1_config_1_1_configuration.html#ac66d081eb61151cc45deadea793cbb29", null ],
     [ "toArray", "class_flux_core_1_1_config_1_1_configuration.html#a658defb34762c8f40085aec87e16ba1a", null ],
     [ "$data", "class_flux_core_1_1_config_1_1_configuration.html#a6efc15b5a2314dd4b5aaa556a375c6d6", null ]
 ];

@@ -113,11 +113,9 @@ $(document).ready(function(){initNavTree('class_flux_core_1_1_routing_1_1_route_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad0213cbbda6e126a6eae581745c58615"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0213cbbda6e126a6eae581745c58615"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__construct</b> (<a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a> $routes)</td></tr>
+<tr class="memitem:ad0213cbbda6e126a6eae581745c58615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html#ad0213cbbda6e126a6eae581745c58615">__construct</a> (<a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a> $routes)</td></tr>
 <tr class="separator:ad0213cbbda6e126a6eae581745c58615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81f5168780192d0875d62df30dc46fce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81f5168780192d0875d62df30dc46fce"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>resolve</b> (<a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_keyable.html">RouteKeyable</a> $id)</td></tr>
+<tr class="memitem:a81f5168780192d0875d62df30dc46fce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html#a81f5168780192d0875d62df30dc46fce">resolve</a> (<a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_keyable.html">RouteKeyable</a> $id)</td></tr>
 <tr class="separator:a81f5168780192d0875d62df30dc46fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -129,9 +127,63 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a72ead29e4317fbc4335fd3ba764e8b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_route_resolver_8php_source.html#l00007">7</a> of file <a class="el" href="_route_resolver_8php_source.html">RouteResolver.php</a>.</p>
-</div><h2 class="groupheader">Field Documentation</h2>
+<div class="textblock"><p><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route.html">Route</a> resolver class. </p>
+
+<p>Definition at line <a class="el" href="_route_resolver_8php_source.html#l00010">10</a> of file <a class="el" href="_route_resolver_8php_source.html">RouteResolver.php</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad0213cbbda6e126a6eae581745c58615"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a>&#160;</td>
+          <td class="paramname"><em>$routes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a new route resolver instance.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">FluxCore::Routing::Route::RouteCollection</a></td><td class="paramname">$routes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_route_resolver_8php_source.html#l00035">35</a> of file <a class="el" href="_route_resolver_8php_source.html">RouteResolver.php</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a81f5168780192d0875d62df30dc46fce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">resolve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_keyable.html">RouteKeyable</a>&#160;</td>
+          <td class="paramname"><em>$id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Resolve route.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_keyable.html">FluxCore::Routing::Route::RouteKeyable</a></td><td class="paramname">$id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>mixed </dd></dl>
+
+<p>Definition at line <a class="el" href="_route_resolver_8php_source.html#l00046">46</a> of file <a class="el" href="_route_resolver_8php_source.html">RouteResolver.php</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a72ead29e4317fbc4335fd3ba764e8b59"></a>
 <div class="memitem">
 <div class="memproto">
@@ -155,7 +207,7 @@ Protected Attributes</h2></td></tr>
 <div class="line">        <span class="stringliteral">&#39;:alpha&#39;</span> =&gt; <span class="stringliteral">&#39;([a-zA-Z0-9]+)&#39;</span>,</div>
 <div class="line">    )</div>
 </div><!-- fragment -->
-<p>Definition at line <a class="el" href="_route_resolver_8php_source.html#l00010">10</a> of file <a class="el" href="_route_resolver_8php_source.html">RouteResolver.php</a>.</p>
+<p>Definition at line <a class="el" href="_route_resolver_8php_source.html#l00024">24</a> of file <a class="el" href="_route_resolver_8php_source.html">RouteResolver.php</a>.</p>
 
 </div>
 </div>
@@ -165,7 +217,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>FluxCore</b></li><li class="navelem"><b>Routing</b></li><li class="navelem"><b>Route</b></li><li class="navelem"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">RouteResolver</a></li>
-    <li class="footer">Generated on Thu Feb 21 2013 13:28:17 for FluxCore Components by
+    <li class="footer">Generated on Wed Mar 20 2013 10:04:00 for FluxCore Components by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

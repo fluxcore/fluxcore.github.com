@@ -113,18 +113,14 @@ $(document).ready(function(){initNavTree('class_flux_core_1_1_routing_1_1_router
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6c677184126665afb910926cced05aa0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c677184126665afb910926cced05aa0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__construct</b> (<a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a> $routes, <a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">RouteResolver</a> $resolver)</td></tr>
+<tr class="memitem:a6c677184126665afb910926cced05aa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flux_core_1_1_routing_1_1_router.html#a6c677184126665afb910926cced05aa0">__construct</a> (<a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a> $routes, <a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">RouteResolver</a> $resolver)</td></tr>
 <tr class="separator:a6c677184126665afb910926cced05aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f1179240d068c94a040021326032bed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f1179240d068c94a040021326032bed"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__call</b> ($method, $args)</td></tr>
+<tr class="memitem:a9f1179240d068c94a040021326032bed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flux_core_1_1_routing_1_1_router.html#a9f1179240d068c94a040021326032bed">__call</a> ($method, $args)</td></tr>
 <tr class="separator:a9f1179240d068c94a040021326032bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4397f8f692e37d3cb63682dbf920e1bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4397f8f692e37d3cb63682dbf920e1bf"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> ($pattern, $method,\Closure $handler)</td></tr>
+<tr class="memitem:a4397f8f692e37d3cb63682dbf920e1bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flux_core_1_1_routing_1_1_router.html#a4397f8f692e37d3cb63682dbf920e1bf">add</a> ($pattern, $method,\Closure $handler)</td></tr>
 <tr class="separator:a4397f8f692e37d3cb63682dbf920e1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa527f3750d0f07565c886ce34e4c1eb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa527f3750d0f07565c886ce34e4c1eb4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>resolve</b> ($path, Request $request)</td></tr>
-<tr class="separator:aa527f3750d0f07565c886ce34e4c1eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe4051902cb323b6617d931718a3c2fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flux_core_1_1_routing_1_1_router.html#afe4051902cb323b6617d931718a3c2fe">dispatch</a> ($path, Request $request)</td></tr>
+<tr class="separator:afe4051902cb323b6617d931718a3c2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -136,15 +132,171 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7135f2410a6688dad5c96ff68827d911"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_router_8php_source.html#l00011">11</a> of file <a class="el" href="_router_8php_source.html">Router.php</a>.</p>
-</div></div><!-- contents -->
+<div class="textblock"><p><a class="el" href="class_flux_core_1_1_routing_1_1_router.html">Router</a> class. </p>
+
+<p>Definition at line <a class="el" href="_router_8php_source.html#l00014">14</a> of file <a class="el" href="_router_8php_source.html">Router.php</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a6c677184126665afb910926cced05aa0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_collection.html">RouteCollection</a>&#160;</td>
+          <td class="paramname"><em>$routes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_flux_core_1_1_routing_1_1_route_1_1_route_resolver.html">RouteResolver</a>&#160;</td>
+          <td class="paramname"><em>$resolver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Creates a new router instance.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">FluxCore\Routing\Route\RouteCollection</td><td class="paramname">$routes</td><td></td></tr>
+    <tr><td class="paramtype">FluxCore\Routing\Route\RouteResolver</td><td class="paramname">$resolver</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_router_8php_source.html#l00036">36</a> of file <a class="el" href="_router_8php_source.html">Router.php</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9f1179240d068c94a040021326032bed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__call </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Method fallback.</p>
+<p>Provides a shorthand for route assignment.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$method</td><td></td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$args</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_router_8php_source.html#l00050">50</a> of file <a class="el" href="_router_8php_source.html">Router.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4397f8f692e37d3cb63682dbf920e1bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">add </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$pattern</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$method</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">\Closure&#160;</td>
+          <td class="paramname"><em>$handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add route to router.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$pattern</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$method</td><td></td></tr>
+    <tr><td class="paramtype">Closure</td><td class="paramname">$handler</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_router_8php_source.html#l00065">65</a> of file <a class="el" href="_router_8php_source.html">Router.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe4051902cb323b6617d931718a3c2fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">dispatch </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Request&#160;</td>
+          <td class="paramname"><em>$request</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dispatch path from request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$path</td><td></td></tr>
+    <tr><td class="paramtype">Symfony\Component\HttpFoundation\Request</td><td class="paramname">$request</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>mixed </dd></dl>
+
+<p>Definition at line <a class="el" href="_router_8php_source.html#l00077">77</a> of file <a class="el" href="_router_8php_source.html">Router.php</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><b>FluxCore</b></li><li class="navelem"><b>Routing</b></li><li class="navelem"><a class="el" href="class_flux_core_1_1_routing_1_1_router.html">Router</a></li>
-    <li class="footer">Generated on Thu Feb 21 2013 13:28:17 for FluxCore Components by
+    <li class="footer">Generated on Wed Mar 20 2013 10:03:59 for FluxCore Components by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

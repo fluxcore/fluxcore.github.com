@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>FluxCore Components: C:/GitHub/fluxcore/components/src/FluxCore/Core/Service/ServiceProvider.php Source File</title>
+<title>FluxCore Components: C:/GitHub/fluxcore/components/src/FluxCore/Core/ServiceProvider.php Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,27 +106,18 @@ $(document).ready(function(){initNavTree('_service_provider_8php_source.html',''
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;&lt;?php</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>FluxCore\Core\Service;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>FluxCore\Core;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_1_1_service_provider.html">    5</a></span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_flux_core_1_1_core_1_1_service_1_1_service_provider.html">ServiceProvider</a></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">protected</span> $app;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">function</span> __construct($app = null)</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        $this-&gt;app = $app;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">abstract</span> <span class="keyword">public</span> <span class="keyword">function</span> <span class="keyword">register</span>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span> <span class="keyword">function</span> boot() { }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;use Illuminate\Support\ServiceProvider as BaseServiceProvider;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="class_flux_core_1_1_core_1_1_service_provider.html">   10</a></span>&#160;<span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_flux_core_1_1_core_1_1_service_provider.html">ServiceProvider</a> <span class="keyword">extends</span> BaseServiceProvider {}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a class="el" href="dir_2ef617bc4dbcdc00f8daaea93dadc86f.html">src</a></li><li class="navelem"><a class="el" href="dir_21cd6ac02ff316c46b49e7ef95526e2b.html">FluxCore</a></li><li class="navelem"><a class="el" href="dir_4168f8a2b97b2151603dbfff8540a0f9.html">Core</a></li><li class="navelem"><a class="el" href="dir_ed6a6354eb4ee3fa188dac7048708c7f.html">Service</a></li><li class="navelem"><b>ServiceProvider.php</b></li>
-    <li class="footer">Generated on Thu Feb 21 2013 13:28:17 for FluxCore Components by
+    <li class="navelem"><a class="el" href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a class="el" href="dir_2ef617bc4dbcdc00f8daaea93dadc86f.html">src</a></li><li class="navelem"><a class="el" href="dir_21cd6ac02ff316c46b49e7ef95526e2b.html">FluxCore</a></li><li class="navelem"><a class="el" href="dir_4168f8a2b97b2151603dbfff8540a0f9.html">Core</a></li><li class="navelem"><b>ServiceProvider.php</b></li>
+    <li class="footer">Generated on Wed Mar 20 2013 10:03:57 for FluxCore Components by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
