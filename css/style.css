@@ -71,7 +71,7 @@ body {
 .huge.download { background: transparent url('../img/download.png'); }
 .huge.learn { background: transparent url('../img/learn.png'); }
 
-#content { font-size: 16px; line-height: 28px; }
+#content { font-size: 16px; line-height: 28px; margin-bottom: 50px; }
 #content > *,
 #content noscript > * { margin-top: 15px; }
 
