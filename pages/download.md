@@ -7,7 +7,7 @@ Download
 	fluxcore/framework master
 </a>
 
-_You can download **FluxCore** by clicking the button below._
+_You can download **FluxCore** by clicking the button above._
 
 If you need help getting started with using **FluxCore** we recommend that you read
 through our [Getting Started guide](#/docs/guide/getting-started) and if you want more
