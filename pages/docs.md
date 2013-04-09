@@ -6,7 +6,6 @@ Index
 ### Guides
 
  * [Getting Started](#/docs/guide/getting-started) - _Getting started with **FluxCore**._
- * [Service Providers](#/docs/guide/service-providers) - _Getting started using service providers **FluxCore**._
 
 ### Components
 
